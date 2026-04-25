@@ -1,0 +1,57 @@
+-- __init__.scpl - Guard Library for SCPL
+
+(function positive? (value)
+    (if (> value 0)
+        (return true))
+    (return false))
+
+(function negative? (value)
+    (if (< value 0)
+        (return true))
+    (return false))
+
+(function zero? (value)
+    (if (== value 0)
+        (return true))
+    (return false))
+
+(function even? (value)
+    (if (== (% value 2) 0)
+        (return true))
+    (return false))
+
+(function odd? (value)
+    (if (!= (% value 2) 0)
+        (return true))
+    (return false))
+
+(function between? (value min max)
+    (if (and (>= value min) (<= value max))
+        (return true))
+    (return false))
+
+(function clamp (value min max)
+    (if (< value min)
+        (return min))
+    (if (> value max)
+        (return max))
+    (return value))
+
+(function empty? (value)
+    (if (== (length value) 0)
+        (return true))
+    (return false))
+
+(function blank? (value)
+    (if (== value '')
+        (return true))
+    (return false))
+
+(function one-of? (value a b c)
+    (if (== value a)
+        (return true))
+    (if (== value b)
+        (return true))
+    (if (== value c)
+        (return true))
+    (return false))
